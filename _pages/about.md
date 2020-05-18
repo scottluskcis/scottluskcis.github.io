@@ -3,6 +3,4 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
-
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+Scott is a Principal Software Engineer and consultant at [Hitachi Solutions](https://us.hitachi-solutions.com/), with over 13 years of experience architecting and developing enterprise-grade software solutions. He actively works as a consultant and engineer building applications and services that utilize the [Microsoft Azure](https://azure.microsoft.com/) cloud platform. Much of his experience has been as a full stack developer utilizing numerous front end and back end technologies. He loves writing code, sharing knowledge with others, and talking about tech over a good cup of coffee. Scott currently resides in eastern Kentucky with his wife and kids.
