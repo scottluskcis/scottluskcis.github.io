@@ -1,5 +1,5 @@
 ---
-title: "GitHub: Notable resources to be aware of"
+title: "GitHub: Links to Bookmark"
 date: 2020-07-03T07:00:00-04:00
 categories:
   - notable links
@@ -7,13 +7,13 @@ tags:
   - github links
 ---
 
-It surprised me recently that a number of developers aren't aware of a lot of the documenation and resources that is available just on the GitHub site itself. If you are in software development there is no doubt you know what [GitHub](https://github.com/) is. I'm willing to bet you have your own GitHub account and perhaps if we were to view your GitHub profile would see several repositories, bookmarks, and projects that you follow. Are you aware of all of the resources that are on hand?
+It surprised me recently that a number of developers aren't aware of a lot of the documenation and resources that are available just on the `GitHub` site itself. If you are in software development there is no doubt you know what [GitHub](https://github.com/) is. I'm willing to bet you have your own GitHub account and perhaps if we were to view your GitHub profile would see several `repositories, bookmarks, and projects` that you follow, but are you aware of all of the resources that are available?
 
-What you may not know or possibly have never explored are the many resources available to you just a click away from most places on the GitHub site. Let me pause for a moment, for those who are completely new to GitHub or have never heard of it start at [GitHub About](https://github.com/about) and then move on to the [GitHub Features](https://github.com/features) page to start to understand what exactly GitHub offers. 
+What you may not know or possibly have never explored are the resources available to you just a click away from most places on the GitHub site. Let me pause for a moment, for those who are completely new to `GitHub` or have never heard of it start at [GitHub About](https://github.com/about) and then move on to the [GitHub Features](https://github.com/features) page to start to understand what exactly GitHub offers. 
 
-If you are a regular user of GitHub be sure that you bookmark the [GitHub Docs](https://docs.github.com/en) page to refer to often, it can be a big help. [GitHub Learning Lab](https://lab.github.com/) is also a link to be sure to refer to often that is growing and offers many courses to learn something new on GitHub. If you are a developer trying to extend your repositories with GitHub capabilities then [GitHub Developer](https://developer.github.com/) and [GitHub Marketplace](https://github.com/marketplace) are a must have in your list.
+If you are a regular user of `GitHub`, be sure that you bookmark the [GitHub Docs](https://docs.github.com/en) page to refer to often, it can be a big help. [GitHub Learning Lab](https://lab.github.com/) is also a link to be sure to refer to often that is growing and offers many courses to learn something new on `GitHub`. The Learning Lab seems to be still in some early stages but I think it's going to see some growth in coming days. If you are a developer trying to extend your projects with GitHub capabilities then [GitHub Developer](https://developer.github.com/) and [GitHub Marketplace](https://github.com/marketplace) are a must have in your list.
 
-After a recent conversation, I started looking thru all the bookmarks I had that fall under [GitHub](https://github.com/) site. I wanted to take a moment and start a collection of this below for a quick reference for anyone else that may not be aware of some of these resources. As mentioned, you can see and get to most any of these right of of the GitHub site itself. Start checking out the list below. 
+After a recent conversation, I started looking thru all the bookmarks I had that fall under `GitHub` site. I wanted to take a moment and start a collection of this below for a quick reference for anyone else that may not be aware of some of these resources. As mentioned, you can see and get to most any of these right of of the `GitHub` site itself, such as scroll to bottom of the pages for links in the footer. As a starting point though, start checking out the list below of some links I've made note of. 
 
 I'm curious, which of these were you not already aware of? Do you have any links you think I should add to this collection?
 
