@@ -1,6 +1,6 @@
 # scottluskcis.github.io
 
-This repository is for managing my personal GitHub Pages Blog
+This repository is for managing my personal GitHub Pages Blog available at: [https://scottluskcis.github.io/](https://scottluskcis.github.io/)
 
 ## Blog Setup
 
