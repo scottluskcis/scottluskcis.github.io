@@ -17,5 +17,5 @@ Other Notable links:
 * Installing Jekyll
   * See [Installation](https://jekyllrb.com/docs/installation/)
   * In my case, [Jekyll on Windows](https://jekyllrb.com/docs/installation/windows/)
-  * Ran into some issues also referred to this [Running Jekyll as Non-Superuser (no sudo!)Permalink](https://jekyllrb.com/docs/troubleshooting/#no-sudo)
+  * Ran into some issues also referred to this [Running Jekyll as Non-Superuser (no sudo!)](https://jekyllrb.com/docs/troubleshooting/#no-sudo)
   * Had to refer to some documentation on Bundler [Using Jekyll with Bundler](https://jekyllrb.com/tutorials/using-jekyll-with-bundler/)
