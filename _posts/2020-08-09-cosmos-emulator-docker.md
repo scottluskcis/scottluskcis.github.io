@@ -35,7 +35,7 @@ Details are documented at the following links on things to consider in this scen
 * [Running Docker Desktop in nested virtualization scenarios](https://docs.docker.com/docker-for-windows/troubleshoot/#running-docker-desktop-in-nested-virtualization-scenarios)
 * [Run Hyper-V in a Virtual Machine with Nested Virtualization](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)
 
-**IMPORTANT**: The approach outlined in this article is ONLY recommended for a local development environment. It is NOT recommended that you try this in a non-development environment. Read the referenced articles in greater detail and understand what nested virtualization is but again, use this only for your local development and troubleshooting needs! You may still find the use of Docker Containers for running the Cosmos Emulator could be beneficial (e.g. DevOps Pipelines) but for enabling nested virtualization to accomplish this is the part to take note of.
+> **IMPORTANT**: The approach outlined in this article is ONLY recommended for a local development environment. It is NOT recommended that you try this in a non-development environment. Read the referenced articles in greater detail and understand what nested virtualization is but again, use this only for your local development and troubleshooting needs! You may still find the use of Docker Containers for running the Cosmos Emulator could be beneficial (e.g. DevOps Pipelines) but for enabling nested virtualization to accomplish this is the part to take note of.
 
 ## Configuring Local Development Environment
 
@@ -65,7 +65,7 @@ STEPS:
 9. In Hyper-V **Connect** to your VM
 10. Proceed to [Install Docker Desktop for Windows](#install-docker-desktop-for-windows)
 
-**NOTE**: If you get an error about Execution Policy, you may need to check the current policy set for your machine. Refer to [About Execution Policies](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7) for details. Always review any scripts before executing them. If you do need to change an execution policy I recommending to only [Set a different policy for one session](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7#set-a-different-policy-for-one-session) so that only the current session is affected.
+> **NOTE**: If you get an error about Execution Policy, you may need to check the current policy set for your machine. Refer to [About Execution Policies](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7) for details. Always review any scripts before executing them. If you do need to change an execution policy I recommending to only [Set a different policy for one session](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7#set-a-different-policy-for-one-session) so that only the current session is affected.
 
 ### Install Docker Desktop for Windows
 
@@ -91,7 +91,7 @@ STEPS:
 
 ### Setup the Cosmos Emulator in a Docker Container
 
-With Docker Desktop for Windows installed you can now setup the Cosmos Emulator Docker Container. These steps are documented in greater detail at [Running on Docker](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator#running-on-docker) and in the GitHub repository at [azure-cosmos-db-emulator-docker](https://github.com/Azure/azure-cosmos-db-emulator-docker)
+With Docker Desktop for Windows installed you can setup the Cosmos Emulator Docker Container. These steps are documented in greater detail at [Running on Docker](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator#running-on-docker).
 
 STEPS:
 
@@ -99,18 +99,42 @@ STEPS:
 2. Make sure that Docker is running
 3. Make sure that Docker is set to run Windows Containers
 4. Open Powershell
-5. Run the following command
+5. Run the following command and wait for the image to download
     ```powershell
-    docker pull microsoft/azure-cosmosdb-emulator 
+    docker pull mcr.microsoft.com/cosmosdb/windows/azure-cosmos-emulator 
     ```
-6. 
+6. To start the image, run the following commands:
+    ```powershell
+    md $env:LOCALAPPDATA\CosmosDBEmulator\bind-mount 2>null
+    docker run --name azure-cosmosdb-emulator --memory 2GB --mount "type=bind,source=$env:LOCALAPPDATA\CosmosDBEmulator\bind-mount,destination=C:\CosmosDB.Emulator\bind-mount" --interactive --tty -p 8081:8081 -p 8900:8900 -p 8901:8901 -p 8902:8902 -p 10250:10250 -p 10251:10251 -p 10252:10252 -p 10253:10253 -p 10254:10254 -p 10255:10255 -p 10256:10256 -p 10350:10350 mcr.microsoft.com/cosmosdb/windows/azure-cosmos-emulator
+    ```
+7. Note the response generated from starting the image
+8. Next you will need to import the TLS/SSL certificate using the following command:
+    ```powershell
+    cd $env:LOCALAPPDATA\CosmosDBEmulator\bind-mount
+    .\importcert.ps1
+    ```
+9. Open a browser and navigate to `https://<emulator endpoint provided in response>/_explorer/index.html`
+
+> **NOTE:** Closing the interactive shell once the emulator has been started will shut down the emulator's container.
+
+### Next Steps, Running multiple Emulators
+
+Now that we know we can [Setup the Cosmos Emulator in a Docker Container](#setup-the-cosmos-emulator-in-a-docker-container) lets revisit the original goal here. We want to be able to run an instance of emulator under SQL API and another instance of the emulator using Table API. We can accomplish this using the `/EnableTableEndpoint` argument and also make sure we run the second instance of the emulator under a different port using `-p`, for example `-p 443:8082` or whatever port you want to use.
+
+## Final Thoughts
+
+Using Containers gives us some flexibility here to solve the problem that we were facing. As mentioned previously, the approach outlined in this post is recommended only for local development and troubleshooting purposes. There are many other reasons you may want to run the Cosmos Emulator in a Docker Container as well though. How are you running the Cosmos Emulator in your local environment? Are you using the Docker Container image for Cosmos Emulator for other things such as DevOps?
+
+If you gain nothing else from this post be sure to note that this approach is a possibility and bookmark the documentation: 
+* [Use the Azure Cosmos Emulator for local development and testing - Running on Docker](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator#running-on-docker).
 
 ## References
 
+* [Use the Azure Cosmos Emulator for local development and testing - Running on Docker](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator#running-on-docker)
 * [Running Docker Desktop in nested virtualization scenarios](https://docs.docker.com/docker-for-windows/troubleshoot/#running-docker-desktop-in-nested-virtualization-scenarios)
 * [Run Hyper-V in a Virtual Machine with Nested Virtualization](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/user-guide/nested-virtualization)
 * [How to Run Docker on a Windows 10 Pro Hyper-V Virtual Machine](https://blog.michaeldeongreen.com/static-pages/how-to-run-docker-on-a-windows-10-pro-hyper-v-virtual-machine.html)
-* [Use the Azure Cosmos Emulator for local development and testing - Running on Docker](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator#running-on-docker)
 * [Azure Cosmos DB Emulator Docker Container](https://github.com/Azure/azure-cosmos-db-emulator-docker)
 * [Docker Desktop - Chocolatey Package](https://chocolatey.org/packages/docker-desktop/2.3.0.4)
 * [Enable-NestedVm PowerShell script](https://github.com/MicrosoftDocs/Virtualization-Documentation/blob/live/hyperv-tools/Nested/Enable-NestedVm.ps1)
