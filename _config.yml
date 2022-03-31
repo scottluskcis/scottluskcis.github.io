@@ -25,7 +25,7 @@ search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: mmistakes/minimal-mistakes@4.24.0
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Scott Lusk"
   avatar : "/assets/images/slusk-photo-larger.jpg"
-  bio    : "Principal Software Engineer and consultant at Hitachi Solutions. 13+ years experience architecting and developing enterprise-grade software solutions."
+  bio    : "Solution Architect and consultant at Hitachi Solutions. 15+ years experience architecting and developing enterprise-grade software solutions."
   links:
     - label: "Medium"
       icon: "fas fa-fw fa-link"
